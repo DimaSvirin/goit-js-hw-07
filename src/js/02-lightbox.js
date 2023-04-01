@@ -17,5 +17,17 @@ function createGalleryCards(items) {
 const cardsMarkup = createGalleryCards(galleryItems);
 galleryContainer.insertAdjacentHTML('beforeend', cardsMarkup)
 
+galleryContainer.addEventListener("click", handleGalleryClick)
 
+function handleGalleryClick() {
+    event.preventDefault()
+
+    if (event.target.nodeName !== 'IMG') {
+        return
+    }
+
+    // new SimpleLightbox('.gallery a', {
+    //     captionDelay: 250
+    // })
+}
 console.log(galleryItems);
