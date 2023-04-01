@@ -27,6 +27,8 @@ function handleGalleryClick() {
     }
 
     new SimpleLightbox('.gallery a', {
+        captionSelector: 'img',
+        captionData: 'alt',
         captionDelay: 250,
         captionPosition: 'bottom'
     })
