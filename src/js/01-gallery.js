@@ -23,15 +23,21 @@ const cardsMarkup = createGalleryCards(galleryItems);
 galleryContainer.insertAdjacentHTML(`beforeend`, cardsMarkup)
 
 
-// Шаблон
-// <li class="gallery__item">
-//   <a class="gallery__link" href="large-image.jpg">
-//     <img
-//       class="gallery__image"
-//       src="small-image.jpg"
-//       data-source="large-image.jpg"
-//       alt="Image description"
-//     />
-//   </a>
-// </li>
+galleryContainer.addEventListener("click", handleGalleryClick)
+
+function handleGalleryClick() {
+    event.preventDefault()
+
+    if (event.target.nodeName !== 'IMG') {
+        return
+    }
+
+    const modalImg = event.target.dataset.source
+
+    const instance = basicLightbox.create(
+        `<img src=${modalImg} wigth="800" heigth="600"`
+    )
+    instance.show()
+}
+
 console.log(galleryItems);
