@@ -26,8 +26,9 @@ function handleGalleryClick() {
         return
     }
 
-    // new SimpleLightbox('.gallery a', {
-    //     captionDelay: 250
-    // })
+    new SimpleLightbox('.gallery a', {
+        captionDelay: 250,
+        captionPosition: 'bottom'
+    })
 }
 console.log(galleryItems);
