@@ -6,12 +6,12 @@ function createGalleryCards(items) {
     return items.map(({ preview, original, description }) => {
         return `
     <li class="gallery__item">
-//   <a class="gallery__link" href=${original}>
+//   <a class="gallery__link" href=""${original}>
 //     <img
 //       class="gallery__image"
-//       src=${preview}
-//       data-source=${original}
-//       alt=${description}
+//       src="${preview}"
+//       data-source="${original}"
+//       alt="${description}"
 //     />
 //   </a>
 // </li>
@@ -20,7 +20,7 @@ function createGalleryCards(items) {
 };
 
 const cardsMarkup = createGalleryCards(galleryItems);
-galleryContainer.insertAdjacentHTML(`beforeend`, cardsMarkup)
+galleryContainer.insertAdjacentHTML('beforeend', cardsMarkup)
 
 
 galleryContainer.addEventListener("click", handleGalleryClick)
@@ -35,7 +35,7 @@ function handleGalleryClick() {
     const modalImg = event.target.dataset.source
 
     const instance = basicLightbox.create(
-        `<img src=${modalImg} wigth="800" heigth="600"`
+        `<img src="${modalImg}" alt="" wigth="800" heigth="600">`
     )
     instance.show()
 }
